@@ -35,13 +35,13 @@ export default class RNUrlPreview extends React.PureComponent {
           linkDesc: data.description ? data.description : undefined,
           linkImg:
             data.images && data.images.length > 0
-              ? data.images.find(function(element) {
-                  return (
-                    element.includes(".png") ||
-                    element.includes(".jpg") ||
-                    element.includes(".jpeg")
-                  );
-                })
+              ? data.images.find(function (element) {
+                return (
+                  element.includes(".png") ||
+                  element.includes(".jpg") ||
+                  element.includes(".jpeg")
+                );
+              })
               : undefined,
           linkFavicon:
             data.favicons && data.favicons.length > 0
@@ -172,22 +172,22 @@ export default class RNUrlPreview extends React.PureComponent {
     } = this.props;
     return this.state.isUri
       ? this.renderLinkPreview(
-          text,
-          containerStyle,
-          this.state.linkImg,
-          this.state.linkFavicon,
-          imageStyle,
-          faviconStyle,
-          title,
-          this.state.linkTitle,
-          this.state.linkDesc,
-          textContainerStyle,
-          titleStyle,
-          descriptionStyle,
-          titleNumberOfLines,
-          descriptionNumberOfLines,
-          imageProps
-        )
+        text,
+        containerStyle,
+        this.state.linkImg,
+        this.state.linkFavicon,
+        imageStyle,
+        faviconStyle,
+        title,
+        this.state.linkTitle,
+        this.state.linkDesc,
+        textContainerStyle,
+        titleStyle,
+        descriptionStyle,
+        titleNumberOfLines,
+        descriptionNumberOfLines,
+        imageProps
+      )
       : null;
   }
 }
@@ -250,8 +250,8 @@ RNUrlPreview.propTypes = {
   faviconStyle: ViewPropTypes.style,
   textContainerStyle: ViewPropTypes.style,
   title: PropTypes.bool,
-  titleStyle: Text.propTypes.style,
+  // titleStyle: Text.propTypes.style,
   titleNumberOfLines: Text.propTypes.numberOfLines,
-  descriptionStyle: Text.propTypes.style,
+  // descriptionStyle: Text.propTypes.style,
   descriptionNumberOfLines: Text.propTypes.numberOfLines
 };
